@@ -1,0 +1,123 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+@mixin tablet {
+    @media screen and (max-width: 1093px) and (min-width : 480px) {
+      @content;
+    }
+  }
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+.Navbar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 60px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.30);
+    @include mobile{
+        height: 40px;
+    }
+    .block1{
+        display: flex ;
+        width: 20%;
+        padding-left: 45px;
+        @include mobile{
+            width:50%;
+            justify-content: start;
+            padding-left: 10px;
+        }
+        img{
+            width: 173px;
+            @include mobile{
+                width: 88px;
+            }
+        }
+    }
+    .block2{
+        width: 50%;
+        display: flex;
+        justify-content: start;
+        padding-left: 70px ;
+        @include mobile{
+            display: none;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            font-family: 'Roboto';
+            font-size: 16px;
+        }
+    }
+    .block3{
+        display: flex;
+        justify-content: end;
+        width: 30%;
+        gap:30px;
+        @include mobile{
+            width: 50%;
+        }
+        .inner1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include mobile{
+                display: none;
+            }
+            .coin{
+                border: 2px solid #073763;
+                padding: 5px 8px;
+                border-radius: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                img{
+                    width: 16px;
+                }
+                .points{
+                    font-family: 'Roboto';
+                    font-size: 16px;
+
+                }
+
+            }
+        }
+        .inner2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            @include mobile{
+                display: none;
+            }
+            .username{
+                font-family: 'Roboto';
+                font-size: 16px;
+                color:#073763;
+                ;
+            }
+        }
+        .inner3{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-right: 15px;
+            @include mobile{
+                width: 67px;
+                img{
+                    width: 67px;
+                }
+            }
+        }
+    }
+
+}
